@@ -9,7 +9,8 @@ var app = angular.module('starter', [
   'ionic',
   'starter.controllers',
   'starter.services',
-  'firebase'
+  'firebase',
+  'ngCordova'
 ])
 
 .run(function($ionicPlatform) {
