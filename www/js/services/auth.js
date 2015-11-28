@@ -57,7 +57,6 @@ app.factory('Auth', function(FURL, $firebaseAuth, $firebaseObject, $state) {
     }else {
       $state.go('login');
     }
-
   });
 
   function get_gravatar(email, size) {
