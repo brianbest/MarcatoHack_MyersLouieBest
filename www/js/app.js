@@ -10,10 +10,12 @@ var app = angular.module('starter', [
   'starter.controllers',
   'starter.services',
   'firebase',
-  'ngCordova'
+  'ngCordova',
+  'starter.DashCtrl'
 ])
 
 .run(function($ionicPlatform) {
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)

@@ -1,6 +1,6 @@
-'use strict';
+angular.module('starter.DashCtrl', [])
 
-app.controller('DashCtrl', function($scope, $cordovaGeolocation) {
+.controller('DashCtrl', function($scope, $cordovaGeolocation, Auth) {
 	var options = {timeout: 10000, enableHighAccuracy: true};
 
 	$cordovaGeolocation.getCurrentPosition(options).then(function(position){
