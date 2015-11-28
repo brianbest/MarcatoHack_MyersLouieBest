@@ -28,4 +28,7 @@ app.controller('DashCtrl', function($scope, $cordovaGeolocation) {
 	}, function(error){
 		console.log("Could not get location");
 	});
+  $scope.joinEvent = function(){
+    console.log('will join the event here');
+  }
 })
