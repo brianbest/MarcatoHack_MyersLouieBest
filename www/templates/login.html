@@ -1,9 +1,27 @@
 <ion-view view-title="Login">
   <ion-content>
-    <ion-list>
-      <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-      </ion-toggle>
-    </ion-list>
+
+    <h1 align="center" style="color:lightblue">Locate Me</h1>
+
+    <div class="row" align="center">
+
+      <button class="socialButton" ng-click="facebookLogin()">
+        <i style="font-size: 50px" class="icon ion-social-facebook"></i>
+      </button>
+
+      <button class="socialButton" ng-click="twitterLogin()">
+        <i style="font-size: 50px" class="icon ion-social-twitter"></i>
+      </button>
+
+      <button class="socialButton" ng-click="emailLogin()">
+        <i style="font-size: 50px" class="icon ion-ios-email"></i>
+      </button>
+    </div>
+
+    <!--<ion-list>-->
+      <!--<ion-toggle  ng-model="settings.enableFriends">-->
+        <!--Enable Friends-->
+      <!--</ion-toggle>-->
+    <!--</ion-list>-->
   </ion-content>
 </ion-view>
