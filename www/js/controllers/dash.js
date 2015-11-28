@@ -1,6 +1,6 @@
 angular.module('starter.DashCtrl', [])
 
-.controller('DashCtrl', function($scope, $cordovaGeolocation, Auth) {
+.controller('DashCtrl', function($scope, $cordovaGeolocation, Auth, Event) {
 	var options = {timeout: 10000, enableHighAccuracy: true};
 
 	$cordovaGeolocation.getCurrentPosition(options).then(function(position){
@@ -30,5 +30,7 @@ angular.module('starter.DashCtrl', [])
 	});
   $scope.joinEvent = function(){
     console.log('will join the event here');
+    //create an event
+    //Event.attendEvent()
   }
 })

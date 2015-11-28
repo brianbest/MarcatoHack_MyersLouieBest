@@ -74,4 +74,18 @@ p {
   text-align: center;
 }
 
+.popup-container .popup{
+  border-radius: 5%;
+  width: 70%;
+  background-color: white;
+}
+
+.panel-body .loginForm {
+  border: none;
+}
+
+.loginForm .loginInput{
+  padding-left: 20px;
+}
+
 
