@@ -1,22 +1,20 @@
+<!--hide the nav bar for Login page-->
+<ion-view hide-nav-bar="true">
+
 <ion-view view-title="Login">
-  <ion-content>
+  <ion-content style="background-color: #33373B">
 
-    <h1 align="center" style="color:lightblue">Locate Me</h1>
-
-    <div class="row" align="center">
-
-      <button class="socialButton" ng-click="facebookLogin()">
-        <i style="font-size: 50px" class="icon ion-social-facebook"></i>
-      </button>
-
-      <button class="socialButton" ng-click="twitterLogin()">
-        <i style="font-size: 50px" class="icon ion-social-twitter"></i>
-      </button>
-
-      <button class="socialButton" ng-click="emailLogin()">
-        <i style="font-size: 50px" class="icon ion-ios-email"></i>
-      </button>
+    <div align="center">
+      <img class="title" src="../img/doorbell.svg">
+      <h2 class="subtitle">The modern doorbell</h2>
     </div>
+
+
+      <button class="button button-block socialButton" ng-click="twitterLogin()">
+        <h2>Login with Twitter</h2>
+      </button>
+
+
 
     <!--<ion-list>-->
       <!--<ion-toggle  ng-model="settings.enableFriends">-->

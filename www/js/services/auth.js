@@ -42,7 +42,7 @@ app.factory('Auth', function(FURL, $firebaseAuth, $firebaseObject, $state) {
       Auth.user=authData;
       Auth.user.profile = $firebaseObject(ref.child('profile').child(authData.uid));
       console.log('the user has already logged in');
-      $state.go('tab.dash');
+      $state.go('dash');
     }else {
       $state.go('login');
     }
