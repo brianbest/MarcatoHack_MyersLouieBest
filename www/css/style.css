@@ -1,3 +1,4 @@
+
 .scroll {
   height: 100%;
 }
@@ -17,11 +18,19 @@ ion-view.pane ion-content{
   width: 30px;
 }
 .button-block.socialButton{
+  font-family: Roboto;
   background-color: #72C4C0;
   border:none;
   position: fixed;
   height: 30%;
   /*bottom: 10px;*/
+}
+
+.button-block.joinButton {
+  background-color: #E37341;
+  border:none;
+  position: fixed;
+  height: 20%;
 }
 
 img.title {
@@ -36,25 +45,30 @@ img.gravatar {
   border-radius: 50%;
   border: 1px #ffffff solid;
   margin-bottom: 1%;
+  position:relative;
 }
 
 h2 {
+  font-family: Roboto;
   font-size: 28px;
   color: #ffffff;
   text-align: center;
 
 }
 .subtitle {
+  font-family: Roboto;
   margin-top: -5%;
   margin-bottom: 40%;
 }
 
 .meetUp {
+  font-family: Roboto;
   background-color: #E37341;
   margin-bottom: -2%;
 }
 
 p {
+  font-family: Roboto;
   color:#ffffff;
   font-size: 18px;
   text-align: center;

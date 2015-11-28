@@ -1,9 +1,13 @@
 <ion-view>
-  <ion-content class="padding">
-    <div class="list card" style="height: 300px">
+  <ion-content>
+    <div style="height: 380px">
+      <button style = "float: right; padding: 3%; background-color: transparent; border: 1px white solid; border-radius: 50%;" ng-click="addEvent()">
+        <i style="font-size: 50px; color: #E37341" class="ion-plus-circled"></i>
+      </button>
       <div id="map" data-tap-disabled="true"></div>
     </div>
 
+    <!--<div class="buffer" style="background-color: transparent; height: 7%; margin-top:-7%"></div>-->
     <div class="meetUp">
       <img class="gravatar" src="../img/adam.jpg">
       <p>Brian Best</p>
@@ -12,7 +16,7 @@
       <br>
     </div>
 
-    <button class="button button-block socialButton" style="background-color: #E37341" ng-click="joinEvent()">
+    <button class="button button-block joinButton" ng-click="joinEvent()">
       <h2>Go to this</h2>
     </button>
 
