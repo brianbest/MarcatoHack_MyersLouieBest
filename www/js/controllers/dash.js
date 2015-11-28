@@ -33,4 +33,8 @@ angular.module('starter.DashCtrl', [])
     //create an event
     //Event.attendEvent()
   }
+
+  $scope.addEvent = function(){
+    console.log('adding Event');
+  }
 })
