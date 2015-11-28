@@ -20,16 +20,21 @@ app.factory('Auth', function(FURL, $firebaseAuth, $firebaseObject, $state) {
     },
 
 
-    login: function(){
+    login: function() {
       console.log("we got to login function");
-      ref.authWithOAuthPopup('twitter', function(error, authData) {
-        if (error) {
-          console.log("Login Failed!", error);
-        } else {
-          console.log("Authenticated successfully with payload:", authData);
-          return Auth.createProfile(authData);
+      ref.$authWithOAuthRedirect('twitter').then(function (authData) {
+      }).catch(function (error) {
+        if (error.code === 'TRANSPORT_UNAVAILABLE') {
+          ref.$authWithOAuthPopup('twitter').then(function (authData) {
+            if (error) {
+              console.log("Login Failed!", error);
+            } else {
+              console.log("Authenticated successfully with payload:", authData);
+              return Auth.createProfile(authData);
+            }
+          });
         }
-      });
+      })
     },
 
     logout: function(){
@@ -42,8 +47,8 @@ app.factory('Auth', function(FURL, $firebaseAuth, $firebaseObject, $state) {
       Auth.user=authData;
       Auth.user.profile = $firebaseObject(ref.child('profile').child(authData.uid));
       console.log('the user has already logged in');
-      return auth;
-      //$state.go('dash');
+      //return auth;
+      $state.go('dash');
     }else {
       $state.go('login');
     }
