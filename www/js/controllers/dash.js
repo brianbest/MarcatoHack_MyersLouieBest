@@ -1,6 +1,16 @@
 angular.module('starter.DashCtrl', [])
 
-.controller('DashCtrl', function($scope, $cordovaGeolocation, Auth, $state, Event) {
+.controller('DashCtrl', function($scope, $cordovaGeolocation, Auth, Event, Coords, $state) {
+
+	$scope.lat = 0.0;
+	$scope.lng = 0.0;
+
+	window.setInterval(function() {
+		var coords = Coords.updateCoords();
+		$scope.lat = coords.lat;
+		$scope.lng = coords.lng;
+	}, 10000);
+
 	var options = {timeout: 10000, enableHighAccuracy: true};
 
 	$cordovaGeolocation.getCurrentPosition(options).then(function(position){
