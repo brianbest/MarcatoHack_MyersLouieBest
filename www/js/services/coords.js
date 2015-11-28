@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('Coords', function(FURL, $cordovaGeolocation, $firebaseObject, $state, Auth) {
+app.factory('Coords', function(FURL, $cordovaGeolocation, $firebaseArray, $firebaseObject, $firebase, $state, Auth) {
   var ref = new Firebase(FURL);
   var user = Auth.user;
 
@@ -10,14 +10,13 @@ app.factory('Coords', function(FURL, $cordovaGeolocation, $firebaseObject, $stat
       var options = {timeout: 10000, enableHighAccuracy: true};
       $cordovaGeolocation.getCurrentPosition(options).then(function(position){
 
-        var coordinates = $firebaseObject(ref.child('coords').child(user.uid));
-        coordinates.$loaded().then(function() {
-          coordinates.lat = position.coords.latitude;
-          coordinates.lng = position.coords.longitude;
-          coordinates.$save().then(function() {
-            return {lat: position.coords.latitude, lng: position.coords.longitude};
-          });
-        })
+        var obj = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        }
+
+        ref.child('coords').child(Auth.user.uid).set(obj);
+        return obj;
 
       }, function(error){
         console.log("Could not get location");
