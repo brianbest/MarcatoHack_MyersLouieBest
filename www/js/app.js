@@ -45,6 +45,12 @@ var app = angular.module('starter', [
       controller: 'LoginCtrl'
     })
 
+    .state('dash', {
+      url: '/dash',
+      templateUrl: 'templates/dash.html',
+      controller: 'DashCtrl'
+    })
+
   // setup an abstract state for the tabs directive
     .state('tab', {
     url: '/tab',
@@ -54,15 +60,15 @@ var app = angular.module('starter', [
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
-    views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
-      }
-    }
-  })
+  //.state('tab.dash', {
+  //  url: '/dash',
+  //  views: {
+  //    'tab-dash': {
+  //      templateUrl: 'templates/tab-dash.html',
+  //      controller: 'DashCtrl'
+  //    }
+  //  }
+  //})
 
   .state('tab.chats', {
       url: '/chats',
