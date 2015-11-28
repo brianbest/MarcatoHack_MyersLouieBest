@@ -17,7 +17,7 @@ $dark:                            #444 !default;
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300);
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
-

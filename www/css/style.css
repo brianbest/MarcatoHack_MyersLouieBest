@@ -1,4 +1,4 @@
-
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300);
 .scroll {
   height: 100%;
 }
@@ -18,11 +18,13 @@ ion-view.pane ion-content{
   width: 30px;
 }
 .button-block.socialButton{
-  font-family: Roboto;
+  font-family: 'Roboto';
+  font-weight: 300;
   background-color: #72C4C0;
-  border:none;
+  border-color: #72C4C0;
+  /*border:none;
   position: fixed;
-  height: 30%;
+  height: 30%;*/
   /*bottom: 10px;*/
 }
 
@@ -56,19 +58,22 @@ h2 {
 
 }
 .subtitle {
-  font-family: Roboto;
+  font-family: 'Roboto';
+  font-weight: 300;
   margin-top: -5%;
   margin-bottom: 40%;
 }
 
 .meetUp {
-  font-family: Roboto;
+  font-family: 'Roboto';
+font-weight: 300;
   background-color: #E37341;
   margin-bottom: -2%;
 }
 
 p {
-  font-family: Roboto;
+  font-family: 'Roboto';
+  font-weight: 300;
   color:#ffffff;
   font-size: 18px;
   text-align: center;
@@ -89,3 +94,22 @@ p {
 }
 
 
+/*Login area*/
+.login-header{
+  height:80vh;
+  //padding-top: 5rem;
+}
+.login-header img{
+
+  display:block;
+  margin: 0 auto;
+  padding-top: 7rem;
+}
+.login-button{
+  height:20vh;
+}
+.login-button button{
+  height: 100%;
+  font-size: 1.75rem;
+  color:#fff;
+}
