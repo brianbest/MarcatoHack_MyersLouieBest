@@ -46,13 +46,6 @@ angular.module('starter.DashCtrl', [])
 		console.log("Could not get location");
 	});
 
-
-  $scope.joinEvent = function(data){
-    console.log('will join the event here', data);
-    Event.attendEvent(data);
-    $location.path('joinEvent/' + data);
-  };
-
   Event.all().$loaded().then(function(data){
       $scope.events = data;
 
