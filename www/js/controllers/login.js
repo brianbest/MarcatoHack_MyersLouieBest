@@ -2,28 +2,6 @@
 
 app.controller('LoginCtrl', function(FURL, $scope, Auth, $state, $ionicPopup) {
 
-  $scope.twitterLogin = function(){
-
-    console.log('twitter clicked');
-    Auth.$authWithOAuthRedirect('twitter').then(function(authData) {
-      console.log('we are in the authwithoauth');
-      $state.go('viewevents');
-      }).catch(function(error) {
-        if (error.code === 'TRANSPORT_UNAVAILABLE') {
-          Auth.$authWithOAuthPopup('twitter').then(function (error, authData) {
-            if (error) {
-              console.log("Login Failed!", error);
-            } else {
-
-              console.log("Authenticated successfully with payload:", authData);
-              $state.go('viewevents');
-              //return Auth.createProfile(authData);
-            }
-          });
-        }
-      });
-  };
-
   $scope.emailLogin = function(){
     console.log('button was clicked on login');
     $scope.user = {};

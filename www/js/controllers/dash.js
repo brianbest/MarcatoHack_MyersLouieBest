@@ -1,6 +1,6 @@
 angular.module('starter.DashCtrl', [])
 
-.controller('DashCtrl', function($scope, $ionicSlideBoxDelegate, $cordovaGeolocation, Auth, Event, Coords, $state) {
+.controller('DashCtrl', function($scope, $ionicSlideBoxDelegate, $ionicPopup, $cordovaGeolocation, Auth, $location, Event, Coords, $state) {
 
     $scope.events = [];
 
@@ -47,32 +47,51 @@ angular.module('starter.DashCtrl', [])
 	});
 
 
-
-
   $scope.joinEvent = function(data){
     console.log('will join the event here', data);
     Event.attendEvent(data);
-    //create an event
-    //Event.attendEvent()
+    $location.path('joinEvent/' + data);
   };
 
   Event.all().$loaded().then(function(data){
       $scope.events = data;
+
+      for(i=0; i<data.length; i++){
+        //console.log(data[i]);
+        console.log(data[i].lat, data[i].lng);
+
+
+      }
+      console.log(data.lat, data.lng);
+
+
       console.log(data);
       setTimeout(function() {
         $ionicSlideBoxDelegate.slide(0);
         $ionicSlideBoxDelegate.update();
-        $scope.$apply();
+        //$scope.$apply();
       });
     });
-    //console.log($scope.events);
 
-   //Event.getEvent('-K4FGcstpIZuuc4lQ9oE').$loaded().then(function(data){
-   //    console.log('we got an event', data);
-   //     $scope.eventCreator = data.creatorName;
-   //     $scope.gravatar = data.creatorFace;
-   //     $scope.place = data.title;
-   //  });
+    $scope.dropdown = function(){
+        var confirmPopup = $ionicPopup.show({
+          title: 'Settings',
+          buttons: [
+            {
+              text: 'Logout',
+              type: 'button-energized',
+              onTap: function () {
+                //user = $scope.user;
+                Auth.logout();
+              }
+            },
+
+            { text: 'Cancel' }
+            ]
+          //template: 'Are you sure you want to eat this ice cream?'
+        });
+
+      };
 
 
   $scope.addEvent = function(){
@@ -97,7 +116,13 @@ angular.module('starter.DashCtrl', [])
     console.log(newEvent);
     Event.createEvent(newEvent).then(function(){
       console.log('saved');
+
       $state.go('dash');
+
     })
   }
+    setTimeout(function(){
+      $scope.$apply();
+
+    }, 3000)
 });
