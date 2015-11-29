@@ -27,9 +27,9 @@ app.factory('Event', function(FURL, $firebaseArray, $firebaseObject, $state, Aut
        var uniqueId = newEvent.key();
 
         var eventgoers = ref.child('event_goers').child(uniqueId).child(Auth.user.uid).set('yes');
-        var profileevent = ref.child('profile').child(Auth.user.uid).child('assigned_event').set(eventId);
+        var profileevent = ref.child('profile').child(Auth.user.uid).child('assigned_event').set(uniqueId);
 
-        return eventgoers;
+        return uniqueId;
       });
     },
 

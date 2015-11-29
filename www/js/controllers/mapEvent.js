@@ -1,6 +1,6 @@
 angular.module('starter.MapEventCtrl', [])
 
-  .controller('MapEventCtrl', function(FURL, $scope, $ionicSlideBoxDelegate, $cordovaGeolocation, $firebaseObject, Auth, Event, $stateParams, Coords, $state){
+  .controller('MapEventCtrl', function(FURL, $scope, $ionicSlideBoxDelegate, $location, $cordovaGeolocation, $firebaseObject, Auth, Event, $stateParams, Coords, $state){
     var ref = new Firebase(FURL);
     $scope.lat = 0.0;
     $scope.lng = 0.0;
@@ -56,7 +56,7 @@ angular.module('starter.MapEventCtrl', [])
                 });
 
                 markers.push(marker);
-              }); 
+              });
             }
 
             console.log('loaded!');
@@ -87,10 +87,10 @@ angular.module('starter.MapEventCtrl', [])
                     });
 
                     markers.push(marker);
-                  }); 
+                  });
                 }
               });
-              
+
             }, 10000);
           });
         }
@@ -115,15 +115,35 @@ angular.module('starter.MapEventCtrl', [])
         console.log(event);
         $scope.face = event.creatorFace;
         $scope.name = event.creatorName;
+        $scope.place = event.title;
       });
+
     }else{
       $scope.showJoinEvent = false;
       $scope.showAddEvent = true;
-      console.log('willl show add event info');
+      //console.log('willl show add event info');
+
+      $scope.addNewEvent = function(event){
+        console.log('position is ', $scope.x, $scope.y);
+        console.log('saving Event to Database');
+        console.log(Auth.user);
+        console.log(Auth.user.profile);
+        var newEvent = {
+          creatorName: Auth.user.profile.name,
+          creatorFace: Auth.user.profile.gravatar,
+          creator: Auth.user.uid,
+          title: event.title,
+          lat:$scope.x,
+          lng:$scope.y
+        };
+        console.log(newEvent);
+        Event.createEvent(newEvent).then(function(eventId){
+          console.log('saved', eventId);
+
+          $location.path('joinEvent/' + eventId);
+
+        })
+      }
     }
-
-
-
-
 
   });
