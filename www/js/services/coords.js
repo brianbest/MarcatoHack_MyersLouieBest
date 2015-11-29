@@ -12,6 +12,7 @@ app.factory('Coords', function(FURL, $cordovaGeolocation, $firebaseArray, $fireb
       var options = {timeout: 10000, enableHighAccuracy: true};
       $cordovaGeolocation.getCurrentPosition(options).then(function(position){
         var obj = {
+          name: Auth.user.profile.name,
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
