@@ -1,6 +1,6 @@
 angular.module('starter.DashCtrl', [])
 
-.controller('DashCtrl', function($scope, $ionicSlideBoxDelegate, $cordovaGeolocation, Auth, Event, Coords, $state) {
+.controller('DashCtrl', function($scope, $ionicSlideBoxDelegate, $ionicPopup, $cordovaGeolocation, Auth, $location, Event, Coords, $state) {
 
     $scope.events = [];
 
@@ -47,13 +47,10 @@ angular.module('starter.DashCtrl', [])
 	});
 
 
-
-
   $scope.joinEvent = function(data){
     console.log('will join the event here', data);
     Event.attendEvent(data);
-    //create an event
-    //Event.attendEvent()
+    $location.path('joinEvent/' + data);
   };
 
     Event.all().$loaded().then(function(data){
@@ -67,25 +64,6 @@ angular.module('starter.DashCtrl', [])
       }
       console.log(data.lat, data.lng);
 
-      //var latLng = new google.maps.LatLng(data.lat, data.lng);
-      //console.log(latLng);
-      //
-      //var mapOptions = {
-      //  center: latLng,
-      //  zoom: 15,
-      //  mapTypeId: google.maps.MapTypeId.ROADMAP
-      //};
-      //
-      //$scope.map = new google.maps.Map(document.getElementById("mapE"), mapOptions);
-      //
-      //google.maps.event.addListenerOnce($scope.map, 'idle', function(){
-      //
-      //  var marker = new google.maps.Marker({
-      //    map: $scope.map,
-      //    animation: google.maps.Animation.DROP,
-      //    position: latLng
-      //  });
-      //});
 
       console.log(data);
       setTimeout(function() {
@@ -94,14 +72,26 @@ angular.module('starter.DashCtrl', [])
         //$scope.$apply();
       });
     });
-    //console.log($scope.events);
 
-   //Event.getEvent('-K4FGcstpIZuuc4lQ9oE').$loaded().then(function(data){
-   //    console.log('we got an event', data);
-   //     $scope.eventCreator = data.creatorName;
-   //     $scope.gravatar = data.creatorFace;
-   //     $scope.place = data.title;
-   //  });
+    $scope.dropdown = function(){
+        var confirmPopup = $ionicPopup.show({
+          title: 'Settings',
+          buttons: [
+            {
+              text: 'Logout',
+              type: 'button-energized',
+              onTap: function () {
+                //user = $scope.user;
+                Auth.logout();
+              }
+            },
+
+            { text: 'Cancel' }
+            ]
+          //template: 'Are you sure you want to eat this ice cream?'
+        });
+
+      };
 
 
   $scope.addEvent = function(){

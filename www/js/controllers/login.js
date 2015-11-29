@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('LoginCtrl', function(FURL, $scope, Auth, $state) {
+app.controller('LoginCtrl', function(FURL, $scope, Auth, $state, $ionicPopup) {
   console.log('brians line');
 
   //$scope.twitterLogin = function(){

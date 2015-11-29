@@ -11,7 +11,8 @@ var app = angular.module('starter', [
   'starter.services',
   'firebase',
   'ngCordova',
-  'starter.DashCtrl'
+  'starter.DashCtrl',
+  'starter.MapEventCtrl'
 ])
 
 .run(function($ionicPlatform) {
@@ -56,9 +57,14 @@ var app = angular.module('starter', [
     .state('addEvent', {
       url: '/addEvent',
       templateUrl: 'templates/addEvent.html',
-      controller: 'DashCtrl'
+      controller: 'MapEventCtrl'
     })
 
+    .state('joinEvent', {
+      url: '/joinEvent/:eventId',
+      templateUrl: 'templates/addEvent.html',
+      controller: 'MapEventCtrl'
+    })
   // setup an abstract state for the tabs directive
     .state('tab', {
     url: '/tab',

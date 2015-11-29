@@ -15,6 +15,11 @@ app.factory('Event', function(FURL, $firebaseArray, $firebaseObject, $state, Aut
       return $firebaseObject(ref.child('events').child(eventId));
     },
 
+    getEventgoers: function(eventId){
+      return $firebaseArray(ref.child('event_goers').child(eventId));
+
+    },
+
     createEvent: function(theEvent) {
       console.log(theEvent);
       theEvent.datetime = Firebase.ServerValue.TIMESTAMP;
@@ -25,7 +30,7 @@ app.factory('Event', function(FURL, $firebaseArray, $firebaseObject, $state, Aut
         var eventgoers = ref.child('event_goers').child(uniqueId).child('userId').set(Auth.user.uid);
 
         return eventgoers;
-      });
+      })
     },
 
     attendEvent: function(eventId) {
@@ -33,9 +38,13 @@ app.factory('Event', function(FURL, $firebaseArray, $firebaseObject, $state, Aut
       Event.getEvent(eventId)
         .$loaded()
         .then(function(theEvent) {
+          console.log(eventId);
 
-          var eventgoers = ref.child('event_goers').child(eventId).child('userId').set(Auth.user.uid);
+          ref.child('event_goers').child(eventId).child('userId').set(Auth.user.uid);
 
+        }).then(function(){
+          console.log('will get all event goers', eventId);
+          var eventgoers = Event.getEventgoers(eventId);
           return eventgoers;
         });
     },

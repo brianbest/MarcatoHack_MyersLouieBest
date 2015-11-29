@@ -30,7 +30,7 @@ ion-view.pane ion-content{
 }
 
 .button-block.joinButton {
-  background-color: #E37341;
+  background-color: #72c4c0;
   border:none;
   position: fixed;
   height: 20%;
@@ -115,7 +115,7 @@ label.item.item-input.event{
 /*Login area*/
 .login-header{
   height:80vh;
-  //padding-top: 5rem;
+
 }
 .login-header img{
 
@@ -130,4 +130,12 @@ label.item.item-input.event{
   height: 100%;
   font-size: 1.75rem;
   color:#fff;
+}
+.avatar {
+  width: 80px;
+  border-radius: 50%;
+  border: 1px #ffffff solid;
+}
+.going {
+  background-color: #333333;
 }
