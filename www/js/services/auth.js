@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('Auth', function(FURL, $firebaseAuth, $firebaseObject, $state) {
+app.factory('Auth', function(FURL, $firebaseAuth, $firebaseObject, $state, $location) {
   var ref = new Firebase(FURL);
 
   var auth = $firebaseAuth(ref);
@@ -51,9 +51,17 @@ app.factory('Auth', function(FURL, $firebaseAuth, $firebaseObject, $state) {
   auth.$onAuth(function(authData){
     if(authData){
       Auth.user=authData;
-      Auth.user.profile = $firebaseObject(ref.child('profile').child(authData.uid));
-      console.log('the user has already logged in');
-      $state.go('viewevents');
+      $firebaseObject(ref.child('profile').child(authData.uid)).$loaded().then(function(theProfile) {
+        Auth.user.profile = theProfile;
+
+        console.log('the user has already logged in');
+        if (Auth.user.profile.assigned_event !== undefined) {
+          $location.path('joinEvent/'+Auth.user.profile.assigned_event);
+        }
+        else {
+          $state.go('viewevents');
+        }
+      });
     }else {
       $state.go('login');
     }

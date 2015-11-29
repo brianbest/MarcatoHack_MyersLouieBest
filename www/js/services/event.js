@@ -17,7 +17,6 @@ app.factory('Event', function(FURL, $firebaseArray, $firebaseObject, $state, Aut
 
     getEventgoers: function(eventId){
       return $firebaseArray(ref.child('event_goers').child(eventId));
-
     },
 
     createEvent: function(theEvent) {
@@ -28,6 +27,7 @@ app.factory('Event', function(FURL, $firebaseArray, $firebaseObject, $state, Aut
        var uniqueId = newEvent.key();
 
         var eventgoers = ref.child('event_goers').child(uniqueId).child(Auth.user.uid).set('yes');
+        var profileevent = ref.child('profile').child(Auth.user.uid).child('assigned_event').set(eventId);
 
         return eventgoers;
       });
@@ -41,6 +41,7 @@ app.factory('Event', function(FURL, $firebaseArray, $firebaseObject, $state, Aut
           console.log(eventId);
 
           var eventgoers = ref.child('event_goers').child(eventId).child(Auth.user.uid).set('yes');
+          var profileevent = ref.child('profile').child(Auth.user.uid).child('assigned_event').set(eventId);
 
           return eventgoers;
         });
