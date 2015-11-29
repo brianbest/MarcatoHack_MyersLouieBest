@@ -6,6 +6,7 @@
 #map {
   width: 100%;
   height: 100%;
+  z-index: 0;
 }
 
 ion-view.pane ion-content{
@@ -41,6 +42,7 @@ img.title {
 }
 
 img.gravatar {
+  z-index: inherit;
   margin-top: -7%;
   margin-left: 40%;
   width: 80px;
@@ -91,6 +93,22 @@ p {
 
 .loginForm .loginInput{
   padding-left: 20px;
+}
+
+.addNewEvent {
+  font-family: Roboto;
+  background-color: #72C4C0;
+  border:none;
+  position: fixed;
+  height: 22%;
+}
+
+label.item.item-input.event{
+  border: none;
+}
+.event .eventInput {
+  font-size: 24px;
+  padding: 3%;
 }
 
 

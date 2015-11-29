@@ -7,23 +7,26 @@ app.factory('Event', function(FURL, $firebaseArray, $firebaseObject, $state, Aut
 
   var Event = {
 
-    all: events,
+    all: function() {
+      return events
+    },
 
     getEvent: function(eventId) {
       return $firebaseObject(ref.child('events').child(eventId));
     },
 
     createEvent: function(theEvent) {
+      console.log(theEvent);
       theEvent.datetime = Firebase.ServerValue.TIMESTAMP;
-      theEvent.owner = user.uid;
 
       return events.$add(theEvent).then(function(newEvent) {
-        
-        var eventgoers = $firebaseArray(ref.child('event_goers').child(theEvent.title));
+       var uniqueId = newEvent.key();
+
+        var eventgoers = $firebaseArray(ref.child('event_goers').child(uniqueId));
 
         // Create Event-Goers lookup record
         var obj = {
-          userId: user.uid
+          userId: Auth.user.uid
         };
 
         return eventgoers.$add(obj);
@@ -31,19 +34,20 @@ app.factory('Event', function(FURL, $firebaseArray, $firebaseObject, $state, Aut
     },
 
     attendEvent: function(eventId) {
+      console.log(eventId);
       Event.getEvent(eventId)
         .$loaded()
         .then(function(theEvent) {
 
           var eventgoers = $firebaseArray(ref.child('event_goers').child(theEvent.title));
-          
+
           // Create Event-Goers lookup record
           var obj = {
             userId: user.uid
           }
 
-          return eventgoers.$add(obj);  
-        }); 
+          return eventgoers.$add(obj);
+        });
     },
 
     leaveEvent: function(eventId) {
@@ -59,9 +63,9 @@ app.factory('Event', function(FURL, $firebaseArray, $firebaseObject, $state, Aut
           }
           else {
             var eventgoer = $firebaseObject(ref.child('event_goers').child(theEvent.title).child(user.uid));
-            return eventgoers.$remove(); 
-          } 
-        }); 
+            return eventgoers.$remove();
+          }
+        });
     }
   };
 
