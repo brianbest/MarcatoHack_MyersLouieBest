@@ -1,26 +1,13 @@
 'use strict';
 
-app.controller('LoginCtrl', function(FURL, $scope, Auth, $state) {
-  console.log('brians line');
-
-  Auth.$onAuth(function(authData){
-    if(authData){
-      //Auth.user=authData;
-      //Auth.user.profile = $firebaseObject(ref.child('profile').child(authData.uid));
-      console.log('the user has already logged in');
-      $state.go('dash');
-    }else {
-      $state.go('login');
-    }
-
-  });
+app.controller('LoginCtrl', function(FURL, $scope, Auth, $state, $ionicPopup) {
 
   $scope.twitterLogin = function(){
 
     console.log('twitter clicked');
     Auth.$authWithOAuthRedirect('twitter').then(function(authData) {
       console.log('we are in the authwithoauth');
-      $state.go('dash');
+      $state.go('viewevents');
       }).catch(function(error) {
         if (error.code === 'TRANSPORT_UNAVAILABLE') {
           Auth.$authWithOAuthPopup('twitter').then(function (error, authData) {
@@ -29,7 +16,7 @@ app.controller('LoginCtrl', function(FURL, $scope, Auth, $state) {
             } else {
 
               console.log("Authenticated successfully with payload:", authData);
-              $state.go('dash');
+              $state.go('viewevents');
               //return Auth.createProfile(authData);
             }
           });
@@ -53,7 +40,7 @@ app.controller('LoginCtrl', function(FURL, $scope, Auth, $state) {
           onTap: function(user) {
             user = $scope.user;
             Auth.login(user).then(function(){
-              $state.go('dash');
+              $state.go('viewevents');
             }, function(err) {
               console.log('Error...', err);
             });
@@ -67,7 +54,7 @@ app.controller('LoginCtrl', function(FURL, $scope, Auth, $state) {
             //register the user
             Auth.register(user).then(function(){
               console.log('user was registered successfully');
-              $state.go('tab.dash');
+              $state.go('viewevents');
             }, function(err) {
               console.log('Error...', err);
             });
