@@ -58,6 +58,35 @@ angular.module('starter.DashCtrl', [])
 
     Event.all().$loaded().then(function(data){
       $scope.events = data;
+
+      for(i=0; i<data.length; i++){
+        //console.log(data[i]);
+        console.log(data[i].lat, data[i].lng);
+
+
+      }
+      console.log(data.lat, data.lng);
+
+      //var latLng = new google.maps.LatLng(data.lat, data.lng);
+      //console.log(latLng);
+      //
+      //var mapOptions = {
+      //  center: latLng,
+      //  zoom: 15,
+      //  mapTypeId: google.maps.MapTypeId.ROADMAP
+      //};
+      //
+      //$scope.map = new google.maps.Map(document.getElementById("mapE"), mapOptions);
+      //
+      //google.maps.event.addListenerOnce($scope.map, 'idle', function(){
+      //
+      //  var marker = new google.maps.Marker({
+      //    map: $scope.map,
+      //    animation: google.maps.Animation.DROP,
+      //    position: latLng
+      //  });
+      //});
+
       console.log(data);
       setTimeout(function() {
         $ionicSlideBoxDelegate.slide(0);

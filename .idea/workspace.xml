@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a387fd82-88fb-4e5d-8ab2-0feb0e1ade47" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/dash.html" afterPath="$PROJECT_DIR$/www/templates/dash.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers/dash.js" afterPath="$PROJECT_DIR$/www/js/controllers/dash.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/services/event.js" afterPath="$PROJECT_DIR$/www/js/services/event.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controllers/login.js" afterPath="$PROJECT_DIR$/www/js/controllers/login.js" />
     </list>
     <ignored path="MarcatoHack_MyersLouieBest.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,8 +51,8 @@
       <file leaf-file-name="dash.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/templates/dash.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.360465" vertical-offset="259" max-vertical-offset="858">
-              <caret line="21" column="87" selection-start-line="21" selection-start-column="87" selection-end-line="21" selection-end-column="87" />
+            <state vertical-scroll-proportion="2.5" vertical-offset="523" max-vertical-offset="858">
+              <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
               <folding>
                 <element signature="n#style#0;n#ion-slide-box#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#ion-slide#0;n#ion-slide-box#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
@@ -76,11 +76,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dash.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dash.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/controllers/dash.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55443037" vertical-offset="2047" max-vertical-offset="2530">
-              <caret line="103" column="3" selection-start-line="103" selection-start-column="3" selection-end-line="103" selection-end-column="3" />
+            <state vertical-scroll-proportion="-5.8846154" vertical-offset="1255" max-vertical-offset="3168">
+              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/js/controllers/login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.47030878" vertical-offset="0" max-vertical-offset="682">
+              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -120,16 +130,16 @@
         <option value="$PROJECT_DIR$/www/templates/tabs.html" />
         <option value="$PROJECT_DIR$/www/templates/tab-dash.html" />
         <option value="$PROJECT_DIR$/www/templates/login.html" />
-        <option value="$PROJECT_DIR$/www/js/controllers/login.js" />
         <option value="$PROJECT_DIR$/www/js/services/auth.js" />
         <option value="$PROJECT_DIR$/www/templates/partials/login.html" />
         <option value="$PROJECT_DIR$/www/templates/addEvent.html" />
         <option value="$PROJECT_DIR$/www/js/app.js" />
         <option value="$PROJECT_DIR$/www/css/style.css" />
-        <option value="$PROJECT_DIR$/www/templates/dash.html" />
         <option value="$PROJECT_DIR$/www/js/services/coords.js" />
         <option value="$PROJECT_DIR$/www/js/services/event.js" />
+        <option value="$PROJECT_DIR$/www/templates/dash.html" />
         <option value="$PROJECT_DIR$/www/js/controllers/dash.js" />
+        <option value="$PROJECT_DIR$/www/js/controllers/login.js" />
       </list>
     </option>
   </component>
@@ -142,7 +152,8 @@
     </gulpfiles>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="1610" />
+    <option name="y" value="166" />
     <option name="width" value="1432" />
     <option name="height" value="826" />
   </component>
@@ -277,28 +288,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MarcatoHack_MyersLouieBest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MarcatoHack_MyersLouieBest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -372,12 +361,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1432" height="826" extended-state="6" />
-    <editor active="true" />
+    <frame x="1610" y="166" width="1432" height="826" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38828337" sideWeight="0.49893692" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38828337" sideWeight="0.49893692" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24960506" sideWeight="0.49948186" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -467,14 +456,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/controllers/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8139535" vertical-offset="0" max-vertical-offset="1540">
-          <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2" vertical-offset="0" max-vertical-offset="3058">
@@ -506,19 +487,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="880">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/dash.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.360465" vertical-offset="259" max-vertical-offset="858">
-          <caret line="21" column="87" selection-start-line="21" selection-start-column="87" selection-end-line="21" selection-end-column="87" />
-          <folding>
-            <element signature="n#style#0;n#ion-slide-box#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#ion-slide#0;n#ion-slide-box#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#ion-slide#0;n#ion-slide-box#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#ion-slide#0;n#ion-slide-box#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -557,10 +525,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/dash.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.5" vertical-offset="523" max-vertical-offset="858">
+          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+          <folding>
+            <element signature="n#style#0;n#ion-slide-box#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#ion-slide#0;n#ion-slide-box#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#ion-slide#0;n#ion-slide-box#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#ion-slide#0;n#ion-slide-box#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/controllers/dash.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55443037" vertical-offset="2047" max-vertical-offset="2530">
-          <caret line="103" column="3" selection-start-line="103" selection-start-column="3" selection-end-line="103" selection-end-column="3" />
+        <state vertical-scroll-proportion="-5.8846154" vertical-offset="1255" max-vertical-offset="3168">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/controllers/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47030878" vertical-offset="0" max-vertical-offset="682">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
           <folding />
         </state>
       </provider>
