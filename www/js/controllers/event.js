@@ -1,14 +1,14 @@
 'use strict';
 
-app.controller('EventCtrl', function(FURL, $scope, Auth, Event, $ionicSlideBoxDelegate, $state) {
-  
+app.controller('EventCtrl', function(FURL, $scope, Auth, Event, $ionicSlideBoxDelegate, $location, $state) {
+
   $scope.events = [];
 
   $scope.joinEvent = function(data){
-    Event.attendEvent(data).then(function(ref) {
-      alert("Joined Event! We now need to move over to carol's module!");
-    });
+    Event.attendEvent(data);
+    $location.path('joinEvent/' + data);
   };
+
 
   $scope.addEvent = function(){
     console.log('adding Event');
