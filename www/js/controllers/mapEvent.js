@@ -1,6 +1,6 @@
 angular.module('starter.MapEventCtrl', [])
 
-  .controller('MapEventCtrl', function(FURL, $scope, $ionicSlideBoxDelegate, $cordovaGeolocation, $firebaseObject, Auth, Event, $stateParams, Coords, $state){
+  .controller('MapEventCtrl', function(FURL, $scope, $ionicSlideBoxDelegate, $location, $cordovaGeolocation, $firebaseObject, Auth, Event, $stateParams, Coords, $state){
     var ref = new Firebase(FURL);
     $scope.lat = 0.0;
     $scope.lng = 0.0;
@@ -55,7 +55,7 @@ angular.module('starter.MapEventCtrl', [])
                 });
 
                 markers.push(marker);
-              }); 
+              });
             }
 
             console.log('loaded!');
@@ -85,10 +85,10 @@ angular.module('starter.MapEventCtrl', [])
                     });
 
                     markers.push(marker);
-                  }); 
+                  });
                 }
               });
-              
+
             }, 10000);
           });
         }
@@ -113,6 +113,7 @@ angular.module('starter.MapEventCtrl', [])
         console.log(event);
         $scope.face = event.creatorFace;
         $scope.name = event.creatorName;
+        $scope.place = event.title;
       });
 
     }else{
@@ -137,14 +138,10 @@ angular.module('starter.MapEventCtrl', [])
         Event.createEvent(newEvent).then(function(eventId){
           console.log('saved', eventId);
 
-          $location.path('addEvent/' + eventId);
+          $location.path('joinEvent/' + eventId);
 
         })
       }
     }
-
-
-
-
 
   });
