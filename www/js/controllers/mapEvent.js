@@ -51,6 +51,7 @@ angular.module('starter.MapEventCtrl', [])
                 var newLatLng = new google.maps.LatLng(coordinates.lat, coordinates.lng);
                 var marker = new google.maps.Marker({
                   map: $scope.map,
+                  label: coordinates.name,
                   position: newLatLng
                 });
 
@@ -81,7 +82,8 @@ angular.module('starter.MapEventCtrl', [])
                     var newLatLng = new google.maps.LatLng(coordinates.lat, coordinates.lng);
                     var marker = new google.maps.Marker({
                       map: $scope.map,
-                      position: newLatLng
+                      position: newLatLng,
+                      label: coordinates.name,
                     });
 
                     markers.push(marker);
