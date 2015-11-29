@@ -22,14 +22,9 @@ app.factory('Event', function(FURL, $firebaseArray, $firebaseObject, $state, Aut
       return events.$add(theEvent).then(function(newEvent) {
        var uniqueId = newEvent.key();
 
-        var eventgoers = $firebaseArray(ref.child('event_goers').child(uniqueId));
+        var eventgoers = ref.child('event_goers').child(uniqueId).child('userId').set(Auth.user.uid);
 
-        // Create Event-Goers lookup record
-        var obj = {
-          userId: Auth.user.uid
-        };
-
-        return eventgoers.$add(obj);
+        return eventgoers;
       });
     },
 
@@ -39,14 +34,9 @@ app.factory('Event', function(FURL, $firebaseArray, $firebaseObject, $state, Aut
         .$loaded()
         .then(function(theEvent) {
 
-          var eventgoers = $firebaseArray(ref.child('event_goers').child(theEvent.title));
+          var eventgoers = ref.child('event_goers').child(eventId).child('userId').set(Auth.user.uid);
 
-          // Create Event-Goers lookup record
-          var obj = {
-            userId: user.uid
-          }
-
-          return eventgoers.$add(obj);
+          return eventgoers;
         });
     },
 

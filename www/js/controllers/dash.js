@@ -62,7 +62,7 @@ angular.module('starter.DashCtrl', [])
       setTimeout(function() {
         $ionicSlideBoxDelegate.slide(0);
         $ionicSlideBoxDelegate.update();
-        $scope.$apply();
+        //$scope.$apply();
       });
     });
     //console.log($scope.events);
@@ -97,7 +97,13 @@ angular.module('starter.DashCtrl', [])
     console.log(newEvent);
     Event.createEvent(newEvent).then(function(){
       console.log('saved');
+
       $state.go('dash');
+
     })
   }
+    setTimeout(function(){
+      $scope.$apply();
+
+    }, 3000)
 });
