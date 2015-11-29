@@ -53,6 +53,12 @@ var app = angular.module('starter', [
       controller: 'DashCtrl'
     })
 
+    .state('addEvent', {
+      url: '/addEvent',
+      templateUrl: 'templates/addEvent.html',
+      controller: 'DashCtrl'
+    })
+
   // setup an abstract state for the tabs directive
     .state('tab', {
     url: '/tab',

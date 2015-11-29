@@ -1,0 +1,27 @@
+<ion-view>
+  <ion-content>
+    <div style="height: 480px">
+
+      <div id="map" data-tap-disabled="true"></div>
+
+    </div>
+
+    <div class="buffer" style="background-color: transparent; height: 7%; margin-top:-7%"></div>
+    <div>
+      <form name="event" ng-model="event" ng-submit="addNewEvent(event)">
+      <label class="item item-input event">
+
+        <input class="eventInput" type="text" ng-model='event.title' placeholder="Where you at??">
+      </label>
+
+      <button class="button button-block addNewEvent" type="submit">
+        <h2>Start Event</h2>
+      </button>
+      </form>
+    </div>
+
+
+
+
+  </ion-content>
+</ion-view>

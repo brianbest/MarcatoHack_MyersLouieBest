@@ -93,6 +93,22 @@ p {
   padding-left: 20px;
 }
 
+.addNewEvent {
+  font-family: Roboto;
+  background-color: #72C4C0;
+  border:none;
+  position: fixed;
+  height: 22%;
+}
+
+label.item.item-input.event{
+  border: none;
+}
+.event .eventInput {
+  font-size: 24px;
+  padding: 3%;
+}
+
 
 /*Login area*/
 .login-header{

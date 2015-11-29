@@ -1,6 +1,6 @@
 angular.module('starter.DashCtrl', [])
 
-.controller('DashCtrl', function($scope, $cordovaGeolocation, Auth, Event, Coords) {
+.controller('DashCtrl', function($scope, $cordovaGeolocation, Auth, Event, Coords, $state) {
 
 	$scope.lat = 0.0;
 	$scope.lng = 0.0;
@@ -44,7 +44,34 @@ angular.module('starter.DashCtrl', [])
     //Event.attendEvent()
   }
 
+   Event.getEvent('-K4FGcstpIZuuc4lQ9oE').$loaded().then(function(data){
+       console.log('we got an event', data);
+        $scope.eventCreator = data.creatorName;
+        $scope.gravatar = data.creatorFace;
+        $scope.place = data.title;
+     });
+
+
   $scope.addEvent = function(){
     console.log('adding Event');
+    $state.go('addEvent')
   }
-})
+
+  $scope.addNewEvent = function(event){
+    console.log('saving Event to Database');
+    console.log(Auth.user);
+    console.log(Auth.user.profile);
+    var newEvent = {
+      creatorName: Auth.user.profile.name,
+      creatorFace: Auth.user.profile.gravatar,
+      creator: Auth.user.uid,
+      title: event.title,
+      lat:'',
+      lng:''
+    };
+    console.log(newEvent);
+    Event.createEvent(newEvent).then(function(){
+      console.log('saved');
+    })
+  }
+});
