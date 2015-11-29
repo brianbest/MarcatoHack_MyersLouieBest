@@ -18,6 +18,7 @@ app.controller('LoginCtrl', function(FURL, $scope, Auth, $state,$ionicPopup) {
   $scope.twitterLogin = function(){
 
   };
+
   $scope.emailLogin = function(){
     console.log('button was clicked on login');
     $scope.user = {};
