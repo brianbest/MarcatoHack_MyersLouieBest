@@ -138,4 +138,40 @@ label.item.item-input.event{
 }
 .going {
   background-color: #333333;
+  overflow: auto;
+}
+
+
+/*Event area*/
+.event-map{
+  height: 68vh!important;
+}
+.event-meta{
+  height: 32vh!important;
+  background-color: #333333;
+}
+.event-info{
+  padding-top: 2.25rem;
+}
+.event-info img{
+  display: inline-block;
+  float: left;
+}
+.event-info .event-people{
+  display: inline-block;
+  float: left;
+  overflow: auto;
+  margin-left: 1rem;
+}
+.event-people p{
+  text-align: left;
+  padding-bottom:0.25rem;
+  margin-bottom:0;
+
+}
+.event-people h2{
+  text-align: left;
+  padding-top:0rem;
+  margin-top:0;
+
 }

@@ -2,13 +2,13 @@
   <ion-content>
     <div style="height: 480px">
 
-      <div id="map" data-tap-disabled="true"></div>
+      <div id="map" class="event-map" data-tap-disabled="true"></div>
 
     </div>
 
     <div class="buffer" style="background-color: transparent; height: 7%; margin-top:-7%"></div>
 
-    <div ng-hide="true">
+    <div ng-show="showAddEvent">
       <form name="event" ng-model="event" ng-submit="addNewEvent(event)">
       <label class="item item-input event">
 
@@ -21,23 +21,18 @@
       </form>
     </div>
 
-    <div>
+    <div ng-show="showJoinEvent" class="event-meta">
 
       <div class="going">
         <div class="row">
-          <div class="col-20">
+          <div class="col event-info">
             <img class="avatar" src="{{face}}">
-          </div>
-          <div class="col-67">
-            <p>{{name}}</p>
-            <h2>Meet Up at {{event.title}}</h2>
-            <i class="ion-ios-person" style="font-size: 50px; color:#ffffff">{{goers}}</i>
-          </div>
+            <div class="event-people">
+              <p>{{name}}</p>
+              <h2>Meet Up at {{place}}</h2>
+              <i class="ion-ios-person" style="font-size: 20px; color:#ffffff"><span>{{goers}}</span></i>
+            </div>
         </div>
-
-
-        <br>
-        <br>
       </div>
     </div>
 
