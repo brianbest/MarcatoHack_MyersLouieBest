@@ -8,7 +8,7 @@
 
     <div class="buffer" style="background-color: transparent; height: 7%; margin-top:-7%"></div>
 
-    <div ng-hide="true">
+    <div ng-show="showAddEvent">
       <form name="event" ng-model="event" ng-submit="addNewEvent(event)">
       <label class="item item-input event">
 
@@ -21,7 +21,7 @@
       </form>
     </div>
 
-    <div>
+    <div ng-show="showJoinEvent">
 
       <div class="going">
         <div class="row">
