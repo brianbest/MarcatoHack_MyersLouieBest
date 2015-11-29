@@ -13,16 +13,18 @@ app.factory('Coords', function(FURL, $cordovaGeolocation, $firebaseArray, $fireb
         var obj = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
-        }
+        };
+        //console.log(obj);
 
         ref.child('coords').child(Auth.user.uid).set(obj);
+
         return obj;
 
       }, function(error){
         console.log("Could not get location");
         return {lat: 0.0, lng: 0.0};
       });
-    },
+    }
   };
 
   return Coords;

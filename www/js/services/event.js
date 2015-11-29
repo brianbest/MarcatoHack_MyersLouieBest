@@ -7,7 +7,9 @@ app.factory('Event', function(FURL, $firebaseArray, $firebaseObject, $state, Aut
 
   var Event = {
 
-    all: events,
+    all: function() {
+      return events
+    },
 
     getEvent: function(eventId) {
       return $firebaseObject(ref.child('events').child(eventId));
@@ -32,6 +34,7 @@ app.factory('Event', function(FURL, $firebaseArray, $firebaseObject, $state, Aut
     },
 
     attendEvent: function(eventId) {
+      console.log(eventId);
       Event.getEvent(eventId)
         .$loaded()
         .then(function(theEvent) {
