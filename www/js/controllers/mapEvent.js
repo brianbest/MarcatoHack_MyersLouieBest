@@ -100,7 +100,6 @@ angular.module('starter.MapEventCtrl', [])
             position: latLng
           });
         }
-
       });
 
     }, function(error){
@@ -145,5 +144,4 @@ angular.module('starter.MapEventCtrl', [])
         })
       }
     }
-
   });
