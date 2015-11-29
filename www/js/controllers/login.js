@@ -7,7 +7,7 @@ app.controller('LoginCtrl', function(FURL, $scope, Auth, $state, $ionicPopup) {
     console.log('twitter clicked');
     Auth.$authWithOAuthRedirect('twitter').then(function(authData) {
       console.log('we are in the authwithoauth');
-      $state.go('events');
+      $state.go('viewevents');
       }).catch(function(error) {
         if (error.code === 'TRANSPORT_UNAVAILABLE') {
           Auth.$authWithOAuthPopup('twitter').then(function (error, authData) {
@@ -16,7 +16,7 @@ app.controller('LoginCtrl', function(FURL, $scope, Auth, $state, $ionicPopup) {
             } else {
 
               console.log("Authenticated successfully with payload:", authData);
-              $state.go('events');
+              $state.go('viewevents');
               //return Auth.createProfile(authData);
             }
           });
@@ -40,7 +40,7 @@ app.controller('LoginCtrl', function(FURL, $scope, Auth, $state, $ionicPopup) {
           onTap: function(user) {
             user = $scope.user;
             Auth.login(user).then(function(){
-              $state.go('events');
+              $state.go('viewevents');
             }, function(err) {
               console.log('Error...', err);
             });
@@ -54,7 +54,7 @@ app.controller('LoginCtrl', function(FURL, $scope, Auth, $state, $ionicPopup) {
             //register the user
             Auth.register(user).then(function(){
               console.log('user was registered successfully');
-              $state.go('events');
+              $state.go('viewevents');
             }, function(err) {
               console.log('Error...', err);
             });
