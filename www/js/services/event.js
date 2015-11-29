@@ -15,6 +15,11 @@ app.factory('Event', function(FURL, $firebaseArray, $firebaseObject, $state, Aut
       return $firebaseObject(ref.child('events').child(eventId));
     },
 
+    getEventgoers: function(eventId){
+      return $firebaseArray(ref.child('event_goers').child(eventId));
+
+    },
+
     createEvent: function(theEvent) {
       console.log(theEvent);
       theEvent.datetime = Firebase.ServerValue.TIMESTAMP;
@@ -22,14 +27,9 @@ app.factory('Event', function(FURL, $firebaseArray, $firebaseObject, $state, Aut
       return events.$add(theEvent).then(function(newEvent) {
        var uniqueId = newEvent.key();
 
-        var eventgoers = $firebaseArray(ref.child('event_goers').child(uniqueId));
+        var eventgoers = ref.child('event_goers').child(uniqueId).child(Auth.user.uid).set('yes');
 
-        // Create Event-Goers lookup record
-        var obj = {
-          userId: Auth.user.uid
-        };
-
-        return eventgoers.$add(obj);
+        return eventgoers;
       });
     },
 
@@ -38,15 +38,11 @@ app.factory('Event', function(FURL, $firebaseArray, $firebaseObject, $state, Aut
       Event.getEvent(eventId)
         .$loaded()
         .then(function(theEvent) {
+          console.log(eventId);
 
-          var eventgoers = $firebaseArray(ref.child('event_goers').child(theEvent.title));
+          var eventgoers = ref.child('event_goers').child(eventId).child(Auth.user.uid).set('yes');
 
-          // Create Event-Goers lookup record
-          var obj = {
-            userId: user.uid
-          }
-
-          return eventgoers.$add(obj);
+          return eventgoers;
         });
     },
 

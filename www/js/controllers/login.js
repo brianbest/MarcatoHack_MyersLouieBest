@@ -1,23 +1,7 @@
 'use strict';
 
-app.controller('LoginCtrl', function(FURL, $scope, Auth, $state,$ionicPopup) {
-  console.log('brians line');
 
-  // Auth.$onAuth(function(authData){
-  //   if(authData){
-  //     //Auth.user=authData;
-  //     //Auth.user.profile = $firebaseObject(ref.child('profile').child(authData.uid));
-  //     console.log('the user has already logged in');
-  //     $state.go('dash');
-  //   }else {
-  //     $state.go('login');
-  //   }
-  //
-  // });
-
-  $scope.twitterLogin = function(){
-
-  };
+app.controller('LoginCtrl', function(FURL, $scope, Auth, $state, $ionicPopup) {
 
   $scope.emailLogin = function(){
     console.log('button was clicked on login');
@@ -35,7 +19,7 @@ app.controller('LoginCtrl', function(FURL, $scope, Auth, $state,$ionicPopup) {
           onTap: function(user) {
             user = $scope.user;
             Auth.login(user).then(function(){
-              $state.go('dash');
+              $state.go('viewevents');
             }, function(err) {
               console.log('Error...', err);
             });
@@ -49,7 +33,7 @@ app.controller('LoginCtrl', function(FURL, $scope, Auth, $state,$ionicPopup) {
             //register the user
             Auth.register(user).then(function(){
               console.log('user was registered successfully');
-              $state.go('tab.dash');
+              $state.go('viewevents');
             }, function(err) {
               console.log('Error...', err);
             });
