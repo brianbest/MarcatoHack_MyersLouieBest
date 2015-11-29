@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('EventCtrl', function(FURL, $scope, Auth, Event, $ionicSlideBoxDelegate, $location, $state) {
+app.controller('EventCtrl', function(FURL, $scope, Auth, Event, $ionicSlideBoxDelegate, $ionicPopup, $location, $state) {
 
   $scope.events = [];
 
@@ -23,5 +23,26 @@ app.controller('EventCtrl', function(FURL, $scope, Auth, Event, $ionicSlideBoxDe
       $scope.$apply();
     });
   });
+
+  $scope.dropdown = function(){
+    var confirmPopup = $ionicPopup.show({
+      title: 'Settings',
+      buttons: [
+        {
+          text: 'Logout',
+          type: 'button-energized',
+          onTap: function () {
+            //user = $scope.user;
+            Auth.logout();
+          }
+        },
+
+        { text: 'Cancel' }
+      ]
+      //template: 'Are you sure you want to eat this ice cream?'
+    });
+
+  };
+
 
 });
