@@ -1,10 +1,6 @@
 'use strict';
 
 app.controller('LoginCtrl', function(FURL, $scope, Auth, $state, $ionicPopup) {
-  console.log('brians line');
-
-  //$scope.twitterLogin = function(){
-  //  console.log('twitter clicked');
 
   $scope.emailLogin = function(){
     console.log('button was clicked on login');
@@ -22,7 +18,7 @@ app.controller('LoginCtrl', function(FURL, $scope, Auth, $state, $ionicPopup) {
           onTap: function(user) {
             user = $scope.user;
             Auth.login(user).then(function(){
-              $state.go('dash');
+              $state.go('viewevents');
             }, function(err) {
               console.log('Error...', err);
             });
@@ -36,7 +32,7 @@ app.controller('LoginCtrl', function(FURL, $scope, Auth, $state, $ionicPopup) {
             //register the user
             Auth.register(user).then(function(){
               console.log('user was registered successfully');
-              $state.go('tab.dash');
+              $state.go('viewevents');
             }, function(err) {
               console.log('Error...', err);
             });

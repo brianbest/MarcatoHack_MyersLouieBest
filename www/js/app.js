@@ -48,6 +48,12 @@ var app = angular.module('starter', [
       controller: 'LoginCtrl'
     })
 
+    .state('viewevents', {
+      url: '/events',
+      templateUrl: 'templates/events.html',
+      controller: 'EventCtrl'
+    })
+
     .state('dash', {
       url: '/dash',
       templateUrl: 'templates/dash.html',
@@ -114,6 +120,6 @@ var app = angular.module('starter', [
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/dash');
+  $urlRouterProvider.otherwise('/login');
 
 });

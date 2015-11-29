@@ -27,10 +27,10 @@ app.factory('Event', function(FURL, $firebaseArray, $firebaseObject, $state, Aut
       return events.$add(theEvent).then(function(newEvent) {
        var uniqueId = newEvent.key();
 
-        var eventgoers = ref.child('event_goers').child(uniqueId).child('userId').set(Auth.user.uid);
+        var eventgoers = ref.child('event_goers').child(uniqueId).child(Auth.user.uid).set('yes');
 
         return eventgoers;
-      })
+      });
     },
 
     attendEvent: function(eventId) {
@@ -40,11 +40,8 @@ app.factory('Event', function(FURL, $firebaseArray, $firebaseObject, $state, Aut
         .then(function(theEvent) {
           console.log(eventId);
 
-          ref.child('event_goers').child(eventId).child('userId').set(Auth.user.uid);
+          var eventgoers = ref.child('event_goers').child(eventId).child(Auth.user.uid).set('yes');
 
-        }).then(function(){
-          console.log('will get all event goers', eventId);
-          var eventgoers = Event.getEventgoers(eventId);
           return eventgoers;
         });
     },

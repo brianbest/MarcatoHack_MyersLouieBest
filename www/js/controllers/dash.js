@@ -53,7 +53,7 @@ angular.module('starter.DashCtrl', [])
     $location.path('joinEvent/' + data);
   };
 
-    Event.all().$loaded().then(function(data){
+  Event.all().$loaded().then(function(data){
       $scope.events = data;
 
       for(i=0; i<data.length; i++){
