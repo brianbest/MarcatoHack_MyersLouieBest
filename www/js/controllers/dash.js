@@ -56,7 +56,7 @@ angular.module('starter.DashCtrl', [])
     //Event.attendEvent()
   };
 
-    Event.all().$loaded().then(function(data){
+  Event.all().$loaded().then(function(data){
       $scope.events = data;
       console.log(data);
       setTimeout(function() {
