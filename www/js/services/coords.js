@@ -14,7 +14,8 @@ app.factory('Coords', function(FURL, $cordovaGeolocation, $firebaseArray, $fireb
         var obj = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
-        }
+        };
+        //console.log(obj);
 
         ref.child('coords').child(Auth.user.uid).set(obj);
         defer.resolve(obj);
@@ -25,7 +26,7 @@ app.factory('Coords', function(FURL, $cordovaGeolocation, $firebaseArray, $fireb
       });
 
       return defer.promise;
-    },
+    }
   };
 
   return Coords;
